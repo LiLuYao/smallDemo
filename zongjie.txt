@@ -1,0 +1,93 @@
+今天是学习cocos2d-x的第一天
+第一章：简介以及环境搭建
+1.1什么是Cocos2D
+	cocos2d是跨平台游戏引擎，用来开发安卓和苹果平台游戏的。有众多版本，形成了庞大的Cocos2D家族。
+1.1.1Cocos2D的特点
+	Cocos2D是开源框架，用于构建二维游戏、演示程序和其他图形界面交互应用等。
+1.1.2Cocos2D的主要功能
+	作为一款游戏引擎，在游戏开发方面Cocos2D引擎具有很多实用功能。
+	首先降低了技术的复杂性，虽然它基于OpenGL(开放图形库)和OpenGL ES(嵌入式系统开放图形库)，但是使用Cocos2D系列的引擎无需掌握OpenGL的相关知识。大多数Cocos2D游戏中简单的图形对象由Sprite精灵对象生成。Sprite就是一个贴图。你可以调用Cocos2D中的方法来实现图片的缩放。
+1.1.3Cocos2D的应用
+	Cocos2D作为一个游戏引擎，已经从最早的版本移植到很多种语言和框架上，其中最流行的几个包括:支持iOS操作系统的Cocos2D-iPhone版本，支持Android操作系统的Cocos2D-Android和Cocos2D-Android1,以及可以横跨两大操作系统的Cocos2D-X版本，还有有着先天跨平台优势的Cocos2D-HTML5版本。
+1.2什么是Cocos2D-X
+	之前介绍了Cocos2D-X是Cocos2D家族的一个重要分支。它的跨平台特性，使开发者编写一套代码就可以横跨Android和iOS两大平台，从而提高开发者的开发效率。
+1.2.1Cocos2D-X的特点
+	随着智能设备平台的普及、用户数量的增多，智能平台的应用，尤其是游戏异常火爆，从《植物大战僵尸》到《愤怒的小鸟》，移动平台游戏的开发进入了新的阶段。但另一方面，平台的多样性也给开发者带来诸多不便。怎样将一款游戏发布到多个平台也是开发者们一直在探索的问题。特别是随着iOS和Android平台的兴起，跨平台需求行更强了，随即Cocos2D-X分支诞生。其中x包含两个意思：一方面是C++的文件扩展CXX，另一方面意味着交叉，这个开源项目的目标是让用户创建跨平台的代码。Cocos2D-X使用C++重写的Cocos2D框架，因为Android和iOS都支持C++。
+1.2.2Cocos2D-X的主要功能
+Cocos2D-X继承了Cocos2D的全部特典，包括如下内容：
+(1)流程控制：非常容易地管理不同场景之间的流程控制。
+(2)精灵：快速而方便的精灵。
+(3)动作：可组合精灵的动作(如移动、旋转和缩放等)，使精灵动起来。
+(4)特效：包括波浪、旋转和透镜等特性。
+(5)平面地图：支持平面地图和45度角地图。
+(6)转换：从一个场景移动到另外一个不同的场景。
+(7)菜单：创建内部菜单，包括主菜单和游戏菜单。
+(8)文本渲染：支持文本渲染标签。
+(9)文档：包括编程指南、API参考、视频教学和很多简单的测试例子。
+(10)BSD许可：BSD开源协议给予使用者很大自由。使用者可以自由使用、修改源代码，也可以将修改后的代码作为开源或者专有软件再次发布。
+(11)基于OpenGL，支持硬件加速。
+	Cocos2D-X的2.1以上版本采用OpenGL ES的2.0分支，支持CocosBuilder编辑器，并且支持一些扩展类，包括ControlExtension、Notification、ListView等，还支持javaScript脚本的编写，并且最新版本支持iOS、Android和Win32三个平台。
+1.2.3Cocos2D-X的应用
+	由于跨平台的特性，Cocos2D-X得到了诸多开发者的喜爱。目前有很多游戏都是由Cocos2D-X开发的。
+1.3Cocos2D-X与Cocos2D-iPhone的比较
+	Cocos2D-X是跨平台的而Cocos2D-iPhone是专版的。
+1.4Cocos2D-X家族
+	􏴃􏵷􏲮 起初由Python语言编写，后来使用Objective-C语言写了一次就是Cocos2D-iPhone版本，再之后很多语言都写了这个语言，所以就出现了现在庞大了Cocos2D家族，Cocos2D-X,Cocos2D-Android,Cocos2D-HTML5，Cocos2D-net,Cocos2D-javaScript等。
+1.5跨平台环境的搭建
+	1.去网址:http://www.cocos2d-x.org/download下载最新的cocos2d-x-3.0zip文件，将解压后的文件放入非中文路径中
+	2.启动终端
+	3.在终端中输入：cd Documents/cocos2d-x-3.0,回车
+	4.在终端中输入 ./setup.py，回车
+	5.iOS中跳过让输入路径的步骤，然后source／路径／配置环境
+	6.新建工程，在终端中输入:cocos new hello -l cpp -p com.neworigin.hello -d /User/apple/Desktop/(其中hello是工程名,/Users/apple/Desktop/使工程存放位置)，回车
+	7.这样工程就创建完了，双击.xcodeProj文件。
+
+第二章：核心类
+	Cocos2D-X引擎的设计思路是将游戏的各个部分抽象成几个概念，包括导演、场景、布景层和人物精灵。关系如导演->场景->布景层->精灵。
+	几乎任何一款游戏中都会有这些概念，而游戏的复杂程度也就决定这些部分之间的关系复杂程度。具体说明如下：
+	导演(Director):顾名思义，导演类是游戏中的组织者和领导者，使整个游戏的负责人、总指挥。导演类可以置顶游戏的运行规则，从而让游戏内的场景、布景类、精灵类有序的进行。
+	场景(Scene):场景就是一个关卡，或者是一个游戏界面。这样的一个个场景确定了整个游戏。
+	布景层(Layer):一个场景可以由多个布景层构成。布景层就是关卡里的背景，关卡不同也就是场景需要的布景层不同。有时候，为了游戏的不同模块的管理更加方便。会把一个场景氛围多个布景层，如UI布景层、游戏布景层；有些游戏需要更细致的细分，可以分为游戏对象布景层和游戏地图布景层。
+	人物精灵(Sprite):人物精灵可以分为玩家控制的主角类、敌人类；更复杂的游戏可以分为NPC(Non-Player-Controlled Character,非玩家控制角色)类、机关类等，它们是构成游戏的关键要素。
+2.1节点类Node
+	节点类(Node)是Cocos2D-X中主要类，继承自Ref，继承关系如CCCopying->CCObject->CCNode。
+	任何需要画再屏幕上的对象都是节点类或者节点类的子类。最常用的节点类包括场景类(Scene)、布景层类(Layer)、人物精灵类(Sprite)、菜单类(Menu)。
+	Node类包括的主要功能如下:
+	(1)每个节点都可以含有子节点。
+	(2)节点含有周期性回调的方法(Schedule、Unschedule等)。
+	(3)可以含有动作Action。
+	Node可以为它自己和它的子节点添加额外的功能。无论是Node运行的动作(Action)，还是设置旋转角度和位置等属性，副节点的设置都可以传递到子节点上去。
+	由于Node类不自带贴图，所以可以定义一个类继承自Node。一个类继承自Node类，说明它有如下特点:
+	重写初始化的方法和周期性回调方法。
+	在时间线上控制回调。
+	重写渲染的绘制方法。
+2.1.1实例通过节点控制屏幕中的全体渲染对象
+	(1)加入节点
+	新建一个项目，并在HelloWorldScene.cpp文件中的init函数中进行修改
+	bool HelloWorld::init(){
+		if(!Layer::init()){
+			return false;}
+		auto anode=Node::create();		//创建一个节点
+		this->addChild(anode,0);			//将创建的节点作为子节点加入场景类中
+		auto pCloseItem=MenuItemImage::create(“CloseNormal.png”,”CloseSelected.png”,CC_CALLBACK_1(HelloWorld::menuCloseCallBack,this));
+		pCloseItem->setPosition(Point(Director::getInstance->getWinSize().width-20),20);
+		auto menu=Menu::create(pCloseItem,NULL);
+		pMenu->setPosition(Zero);
+		anode->addChild(pMenu,1);
+		auto label=LabelTTF::create(“Hello World”,”Thonburi”,34);
+		auto size=Director::getInstance()->getWinSize();
+		pLabel->setPosition(Point(size.width/2,size.height/2));
+		anode->addChild(pLabel,1);
+		auto pSprite:create::create(“HellodWorld.png”);
+		pSprite->setPosition(Point(Size.width/2,Size.height/2));
+		anode->addChild(pSprite,0);
+		return true;
+	}
+	(2)改变位置
+	修改HelloWorldScene.cpp文件中的方法。
+	设置节点位置anode->setPosition(Point(50,50));
+	(3)设置缩放
+	anode->setScale(0.5);
+	(4)整体旋转
+	anode->setPosition(Point(200,200));
+	anode->setRotation(90.0);
